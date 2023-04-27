@@ -11,7 +11,9 @@ import { getProducts } from "./func/getProducts.js";
 import getUserInfo from "./func/getUserInfo.js";
 import { isLoggedIn } from "./func/isLoggedIn.js";
 // const baseUrl = "https://web.aws.letsift.com/";
-const baseUrl = "http://webserver-env.eba-nu7yntyk.us-east-1.elasticbeanstalk.com/";
+// const baseUrl = "http://webserver-env.eba-nu7yntyk.us-east-1.elasticbeanstalk.com/";
+// const baseUrl = "http://54.156.8.219/";
+const baseUrl = 'https://web.letsift.com/';
 // Send url changes
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     if (changeInfo.url) {
