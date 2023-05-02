@@ -22,6 +22,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         button.style.cursor = "pointer";
         button.style.borderRadius = "15px";
         button.style.boxShadow = "rgba(0, 0, 0, 0.15) 0px 6px 5px";
+        button.style.fontWeight = "500";
         button.addEventListener("click", () => {
             console.log("Button clicked");
             const payload = {

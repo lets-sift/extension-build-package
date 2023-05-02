@@ -13,7 +13,8 @@ import { isLoggedIn } from "./func/isLoggedIn.js";
 // const baseUrl = "https://web.aws.letsift.com/";
 // const baseUrl = "http://webserver-env.eba-nu7yntyk.us-east-1.elasticbeanstalk.com/";
 // const baseUrl = "http://54.156.8.219/";
-const baseUrl = 'https://web.letsift.com/';
+// const baseUrl = 'https://web.letsift.com/';
+const baseUrl = 'https://sift-api.com/';
 // Send url changes
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     if (changeInfo.url) {
@@ -49,6 +50,19 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         const imgUrl = frontendProduct.img_url;
         const img = Array.isArray(imgUrl) ? imgUrl[0] : imgUrl;
         const img_url = img.startsWith("//") ? "https:" + img : img;
+        // const firstIndex = message.url.indexOf(".")
+        // const secondIndex = message.url.subString(firstIndex + 1).indexOf(".")
+        // const brand = message.url.subString(firstIndex + 1, secondIndex);
+        // var raw = JSON.stringify({
+        //     "name": frontendProduct.title,
+        //     "description": frontendProduct.description,
+        //     "category_path": "",
+        //     "img_url": [
+        //         img_url
+        //     ],
+        //     "product_url": message.url,
+        //     "sanity_check": false
+        // });
         var raw = JSON.stringify({
             "name": frontendProduct.title,
             "description": frontendProduct.description,
@@ -57,7 +71,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
                 img_url
             ],
             "product_url": message.url,
-            "sanity_check": false
+            "engine": "pinecone"
         });
         console.log(raw);
         var requestOptions = {
