@@ -50,21 +50,12 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         const imgUrl = frontendProduct.img_url;
         const img = Array.isArray(imgUrl) ? imgUrl[0] : imgUrl;
         const img_url = img.startsWith("//") ? "https:" + img : img;
-        // const firstIndex = message.url.indexOf(".")
-        // const secondIndex = message.url.subString(firstIndex + 1).indexOf(".")
-        // const brand = message.url.subString(firstIndex + 1, secondIndex);
-        // var raw = JSON.stringify({
-        //     "name": frontendProduct.title,
-        //     "description": frontendProduct.description,
-        //     "category_path": "",
-        //     "img_url": [
-        //         img_url
-        //     ],
-        //     "product_url": message.url,
-        //     "sanity_check": false
-        // });
+        const baseurl = message.url.toString();
+        const first = baseurl.indexOf(".");
+        const second = baseurl.indexOf(".", first + 1);
+        const website = baseurl.slice(first + 1, second);
         var raw = JSON.stringify({
-            "name": frontendProduct.title,
+            "name": frontendProduct.title + " " + frontendProduct.color + " " + frontendProduct.brand + " " + website,
             "description": frontendProduct.description,
             "category_path": "",
             "img_url": [

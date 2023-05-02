@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/lets-sift/sift-frontend/static/css/main.88e33cd7.css",
-    "main.js": "/lets-sift/sift-frontend/static/js/main.25dd9c3b.js",
+    "main.js": "/lets-sift/sift-frontend/static/js/main.d074d653.js",
     "index.html": "/lets-sift/sift-frontend/index.html",
     "main.88e33cd7.css.map": "/lets-sift/sift-frontend/static/css/main.88e33cd7.css.map",
-    "main.25dd9c3b.js.map": "/lets-sift/sift-frontend/static/js/main.25dd9c3b.js.map"
+    "main.d074d653.js.map": "/lets-sift/sift-frontend/static/js/main.d074d653.js.map"
   },
   "entrypoints": [
     "static/css/main.88e33cd7.css",
-    "static/js/main.25dd9c3b.js"
+    "static/js/main.d074d653.js"
   ]
 }
